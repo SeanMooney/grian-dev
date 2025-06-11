@@ -1,35 +1,46 @@
 # Current Task
 
-## Status: Repository Setup Complete
+## Status: Ready to Implement Hello World POC
 
-### Just Completed
-- Root git repository initialization
-- Pseudo-monorepo directory structure
-- Development coordination framework
-- Comprehensive .gitignore setup
-- Development automation scripts
-- Enhanced CLAUDE.md integration
-- Git submodules preparation with .gitmodules
-- Comprehensive README.md documentation
-- Submodule conversion script
+### Completed Work
+- [x] Complete development workflow setup and repository structure
+- [x] Git submodules conversion for reference projects
+- [x] Comprehensive reference plugin analysis (grian-prototype, manila-ui, octavia-dashboard)
+- [x] Pragmatic testing strategy for gating CI development
+- [x] Hello World POC planning (simplified 3-commit approach)
 
-### Current Focus
-- Repository ready for submodule conversion when desired
-- Ready to begin feature development
-- Analyzing reference implementations
+### Current Task: Hello World POC Implementation
+**Goal**: Validate architecture patterns and testing workflow with minimal feature
 
-### Next Steps
-1. Analyze reference prototype (grian-horizon-plugin)
-2. Review manila-ui and octavia-dashboard patterns
-3. Begin replicating basic plugin structure
-4. Design initial grian-ui plugin architecture
+**Implementation Plan** (3 atomic commits):
+1. **Panel group registration** + smoke test
+   - File: `_80_grian_telemetry_panel_group.py`
+   - Test: Verify "Telemetry" group appears in project dashboard
+
+2. **Basic hello world panel** + template test
+   - Files: `_90_grian_hello_world_panel.py`, panel.py, views.py, urls.py, index.html
+   - Test: Verify panel loads and renders basic template
+
+3. **Fake API integration** + contract test
+   - Files: api/fake_telemetry.py, update view and template
+   - Test: API contract and view integration
+
+**Key Validations**:
+- Reference patterns (manila-ui registration style)
+- Testing workflow (test-with for structure, test-first for API)
+- Gating CI compliance (all commits pass tests)
+- OpenStack AI style guide compliance
+
+**Files**: See `scratch/planning/hello-world.md` for complete plan
 
 ### Context for AI
 - Always check this file before starting work
 - Update progress as tasks are completed
-- Reference architecture and roadmap docs for bigger picture
+- Follow testing strategy from `scratch/planning/testing-strategy.md`
+- Reference patterns from `scratch/analysis/reference-review.md`
 
 ### Working Notes
 - Following OpenStack AI style guide is mandatory
-- Focus on modern patterns (HTMX over AngularJS)
-- Use reference projects for established patterns, not legacy approaches
+- Use test-with approach for exploration, test-first for contracts
+- Each commit must pass all tests (gating CI requirement)
+- Focus on minimal viable implementation for workflow validation
