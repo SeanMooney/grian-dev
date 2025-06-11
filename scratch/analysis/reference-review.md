@@ -207,25 +207,67 @@ GRIAN_FEATURES = {
 </div>
 ```
 
-## Implementation Priorities
+## Implementation Priorities (Revised for Gating CI)
 
-### Phase 1: Core Structure (Week 1)
-1. **Plugin registration** following hierarchical pattern
-2. **Basic API layer** with fake data source
-3. **Simple metrics view** with server-side rendering
-4. **HTMX integration** for dynamic updates
+### Phase 1: Core Structure (Week 1) - Test-With Approach
+**Goal**: Establish basic plugin architecture with incremental testing
 
-### Phase 2: Data Integration (Week 2)
-1. **Real telemetry integration** (Prometheus/Gnocchi)
-2. **Chart rendering** with Chart.js
-3. **Time range selection** and filtering
-4. **Error handling** and user feedback
+**Commit Sequence**:
+1. **Plugin registration + smoke tests**
+   - Panel group and panel registration files
+   - Basic smoke tests verifying plugin loads
 
-### Phase 3: Advanced Features (Week 3)
-1. **Feature flag system** for data sources
-2. **Multiple chart types** (line, area, bar)
-3. **Comprehensive testing** suite
-4. **Performance optimization**
+2. **Basic metrics view + template tests**
+   - Simple HorizonTemplateView with basic template
+   - Tests for template rendering and context
+
+3. **Fake API layer + contract tests**
+   - Initial API interface with fake data implementation
+   - Contract tests defining expected data structures
+
+4. **Basic HTMX integration + interaction tests**
+   - Simple HTMX partial update for chart area
+   - Tests for HTMX response handling
+
+### Phase 2: Data Integration (Week 2) - Test-First for APIs, Test-With for UI
+**Goal**: Real data integration with robust error handling
+
+**Commit Sequence**:
+1. **API error handling + error scenario tests**
+   - Service unavailable, invalid metrics, timeout handling
+   - Tests for each error scenario with graceful degradation
+
+2. **Prometheus integration + integration tests**
+   - Real Prometheus client implementation
+   - Mocked integration tests with realistic data
+
+3. **Chart rendering + visual tests**
+   - Chart.js integration with server-prepared data
+   - Tests for chart data transformation and rendering
+
+4. **Time range selection + feature tests**
+   - Time range dropdown and validation
+   - Tests for parameter handling and data filtering
+
+### Phase 3: Advanced Features (Week 3) - Test-First for Features
+**Goal**: Production-ready features with comprehensive testing
+
+**Commit Sequence**:
+1. **Feature flag system + configuration tests**
+   - Data source selection and UI feature toggles
+   - Tests for feature flag behavior and fallbacks
+
+2. **Multiple chart types + chart tests**
+   - Line, area, bar chart options
+   - Tests for chart type switching and data adaptation
+
+3. **Error handling polish + edge case tests**
+   - Comprehensive error scenarios and user feedback
+   - Tests for error recovery and graceful degradation
+
+4. **E2E workflow testing + integration tests**
+   - Full user workflow testing (likely with Playwright)
+   - Key interaction paths and accessibility verification
 
 ## Anti-Patterns to Avoid
 
