@@ -4,10 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Structure
 
-This is a pseudo-monorepo development setup for **Grian-UI**, an OpenStack Horizon dashboard plugin for telemetry visualization. The repository structure:
+This is a pseudo-monorepo development setup for **Grian-UI**, an OpenStack Horizon dashboard plugin for telemetry visualization. The repository uses git submodules for proper dependency management:
 
-- **grian-ui/** - Main project: Modern OpenStack Horizon plugin for telemetry dashboards (cloned to root)
-- **refernce/** - Reference directory containing related OpenStack projects and resources
+- **grian-ui/** - Main project: Modern OpenStack Horizon plugin for telemetry dashboards (submodule)
+- **refernce/** - Reference directory containing related OpenStack projects and resources (submodules)
+- **README.md** - Comprehensive repository documentation and usage guide
 
 ### Reference Directory Contents
 - **openstack-ai-style-guide/** - **CRITICAL**: AI coding standards for OpenStack projects
@@ -108,6 +109,7 @@ Grian-UI is built as a Django application that integrates with OpenStack Horizon
 - **scripts/style-check.sh** - Style guide compliance check
 - **scripts/run-tests.sh** - Flexible test runner (unit/functional/style/all)
 - **scripts/workspace-status.sh** - Development workspace overview
+- **scripts/convert-to-submodules.sh** - Convert to proper git submodules (when ready)
 
 ## Development Flow
 

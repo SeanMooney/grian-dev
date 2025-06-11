@@ -82,6 +82,11 @@ scratch/temp/
 scratch/experiments/
 scratch/wip/
 
+# Submodule directories (handled by .gitmodules)
+# Remove these lines when ready to convert to proper submodules
+grian-ui/
+refernce/
+
 # Local development files
 .local/
 *.local

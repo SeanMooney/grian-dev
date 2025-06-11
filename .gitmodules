@@ -1,0 +1,29 @@
+[submodule "grian-ui"]
+	path = grian-ui
+	url = https://opendev.org/openstack/grian-ui
+	branch = master
+
+[submodule "refernce/grian-horizon-plugin"]
+	path = refernce/grian-horizon-plugin
+	url = https://github.com/SeanMooney/grian-horizon-plugin/
+	branch = main
+
+[submodule "refernce/horizon"]
+	path = refernce/horizon
+	url = https://opendev.org/openstack/horizon
+	branch = master
+
+[submodule "refernce/manila-ui"]
+	path = refernce/manila-ui
+	url = https://opendev.org/openstack/manila-ui/
+	branch = master
+
+[submodule "refernce/octavia-dashboard"]
+	path = refernce/octavia-dashboard
+	url = https://opendev.org/openstack/octavia-dashboard
+	branch = master
+
+[submodule "refernce/openstack-ai-style-guide"]
+	path = refernce/openstack-ai-style-guide
+	url = https://github.com/SeanMooney/openstack-ai-style-guide
+	branch = main
