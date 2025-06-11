@@ -49,14 +49,22 @@ Grian-UI is designed as a **modern Horizon plugin** with these architectural pri
 - **manila-ui/** & **octavia-dashboard/**: Established patterns for Horizon integration
 - **horizon/**: Core framework understanding
 
+## Repository Memory System
+
+**AI context for each repository is centralized in `repo-memory/`:**
+
+- **repo-memory/grian-ui.md** - Main project context and development instructions
+- **repo-memory/horizon.md** - Core Horizon framework reference
+- **repo-memory/grian-horizon-plugin.md** - Simple prototype implementation context
+- **repo-memory/manila-ui.md** - Established plugin patterns and conventions
+- **repo-memory/octavia-dashboard.md** - Modern plugin architecture reference
+- **repo-memory/openstack-ai-style-guide.md** - AI coding standards and style guide
+
+**Usage**: Read relevant `.md` files from `repo-memory/` to understand specific repository context before working with code from that repository.
+
 ## Primary Development
 
-The main development work happens in the **grian-ui/** directory. This directory has its own CLAUDE.md with detailed instructions for:
-
-- Environment setup and dependencies
-- Testing (unit, functional, style checks)
-- Development server setup
-- Documentation building
+The main development work happens in the **grian-ui/** directory. Detailed instructions available in `repo-memory/grian-ui.md`:
 
 ### Quick Start for grian-ui
 ```bash
