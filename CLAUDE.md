@@ -67,10 +67,18 @@ pre-commit install --install-hooks
 ```
 
 ### Common Development Tasks
-- **Run tests**: `cd grian-ui && tox -e unit`
+- **Workspace overview**: `./scripts/workspace-status.sh`
+- **Setup environment**: `./scripts/setup-dev.sh`
+- **Run all tests**: `./scripts/run-tests.sh`
+- **Style compliance**: `./scripts/style-check.sh`
 - **Development server**: `cd grian-ui && tox -e runserver`
-- **Lint/style checks**: `cd grian-ui && tox -e pep8`
-- **Style guide verification**: Review against `refernce/openstack-ai-style-guide/docs/quick-rules.md`
+- **Quick unit tests**: `cd grian-ui && tox -e unit`
+
+### AI Workflow Integration
+- **Context files**: Always read `scratch/planning/current-task.md` first
+- **Progress tracking**: Update task files as work progresses
+- **Reference analysis**: Document findings in `scratch/analysis/`
+- **Style compliance**: Mandatory check against OpenStack AI style guide
 
 ## Architecture Context
 
@@ -81,10 +89,32 @@ Grian-UI is built as a Django application that integrates with OpenStack Horizon
 - **Testing Strategy**: Separate unit tests (isolated) and functional tests (with Horizon integration)
 - **Modern UI Approach**: Server-side rendering with HTMX instead of heavy JavaScript frameworks
 
+## Workspace Organization
+
+### Scratch Directory Usage
+- **scratch/planning/current-task.md** - Always check/update this for context
+- **scratch/analysis/** - Store code analysis and reference reviews
+- **scratch/prototypes/** - Quick experiments and proof-of-concepts
+- **scratch/todos/** - Task tracking and work coordination
+
+### Before Starting Work
+1. Check `scratch/planning/current-task.md` for context
+2. Review `refernce/openstack-ai-style-guide/docs/quick-rules.md`
+3. Update `scratch/todos/current-sprint.md` with progress
+4. Run `./scripts/workspace-status.sh` for overview
+
+### Development Scripts
+- **scripts/setup-dev.sh** - Quick environment setup
+- **scripts/style-check.sh** - Style guide compliance check
+- **scripts/run-tests.sh** - Flexible test runner (unit/functional/style/all)
+- **scripts/workspace-status.sh** - Development workspace overview
+
 ## Development Flow
 
-1. **Style compliance**: Always check `refernce/openstack-ai-style-guide/docs/quick-rules.md` before coding
-2. **Primary work**: Focus on grian-ui/ directory
-3. **Reference lookup**: Use refernce/ projects for implementation patterns
-4. **Prototype reference**: Check grian-horizon-plugin/ for simple implementation examples
-5. **Modern patterns**: Favor server-side rendering and HTMX over complex JavaScript
+1. **Workspace check**: Run `./scripts/workspace-status.sh` to understand current state
+2. **Style compliance**: Always check `refernce/openstack-ai-style-guide/docs/quick-rules.md` before coding
+3. **Primary work**: Focus on grian-ui/ directory
+4. **Reference lookup**: Use refernce/ projects for implementation patterns
+5. **Prototype reference**: Check grian-horizon-plugin/ for simple implementation examples
+6. **Modern patterns**: Favor server-side rendering and HTMX over complex JavaScript
+7. **Progress tracking**: Update scratch/todos/ and scratch/planning/ as work progresses
